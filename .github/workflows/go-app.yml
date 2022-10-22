@@ -23,7 +23,7 @@ jobs:
         go-version: ${{ matrix.go_version }}
         
     - name: Build
-      run: go build -v main.go
+      run: go build -v test-actions/app/main.go
 
   test:
     needs: build
@@ -34,4 +34,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Test
-      run: go test -v main_test.go 
+      run: go test -v test-actions/app/main_test.go 
